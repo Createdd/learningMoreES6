@@ -3,6 +3,21 @@
 
 window.onload= function(){
 
+  //new string methods
+  var test="My name is Daniel";
+  console.warn(test.includes("Daniel"));
+  var str ="working more ";
+  var youSay="goodbye";
+  if(youSay.startsWith("goodbye")){
+    var isay="hello";
+  }
+  console.error(`you say ${youSay}, I say ${isay}`);
+  console.log(str.endsWith("working ",str.length-5));
+  console.log(str.startsWith("more", 8));
+  console.log(str.repeat(2));
+
+
+/*
   //object literal improvements
   var name="Daniel";
   var job="Programmer";
@@ -14,9 +29,7 @@ window.onload= function(){
     }//adding methods without the function keyword
   };
   console.log(person.code(200));
-
-
-
+*/
 /*
   //template strings -> they do not ignore whitespace or line breaks!
 
