@@ -3,6 +3,19 @@
 
 window.onload= function(){
 
+  //template strings -> they do not ignore whitespace or line breaks!
+
+  function logPerson(name, age){
+    console.log(`My name is ${name} and my age is ${age} and my Postal Code is ${1000+200}`);
+  }
+  logPerson("Daniel", 23);
+
+
+  var temp=`hello,
+  my name is daniel`;
+  //console.log(temp);
+
+/*
   //spread operators
   var nums=[3,5,7];
   function add(a,b,c){
@@ -16,7 +29,7 @@ window.onload= function(){
 
   var meats=["ham", "salami", "bacon"];
   console.log(...meats);
-
+*/
 /*
   //default parameters considered BAD PRACTICE!
   function logNinja(name="Dav",belt="blue",age=21){
