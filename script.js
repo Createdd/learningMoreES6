@@ -3,6 +3,21 @@
 
 window.onload= function(){
 
+  //object literal improvements
+  var name="Daniel";
+  var job="Programmer";
+
+  var person={
+    name,job,
+    code(x){
+      console.log(`you coded an app ${x} times!`);
+    }//adding methods without the function keyword
+  };
+  console.log(person.code(200));
+
+
+
+/*
   //template strings -> they do not ignore whitespace or line breaks!
 
   function logPerson(name, age){
@@ -14,7 +29,7 @@ window.onload= function(){
   var temp=`hello,
   my name is daniel`;
   //console.log(temp);
-
+*/
 /*
   //spread operators
   var nums=[3,5,7];
