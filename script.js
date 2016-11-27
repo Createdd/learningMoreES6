@@ -3,6 +3,20 @@
 
 window.onload= function(){
 
+  //spread operators
+  var nums=[3,5,7];
+  function add(a,b,c){
+    console.warn(a+b+c);
+  }
+  add(...nums);
+
+  var nums1=[1,2,3];
+  var nums2=[...nums1,4,5,6];
+  console.log(nums2);
+
+  var meats=["ham", "salami", "bacon"];
+  console.log(...meats);
+
 /*
   //default parameters considered BAD PRACTICE!
   function logNinja(name="Dav",belt="blue",age=21){
