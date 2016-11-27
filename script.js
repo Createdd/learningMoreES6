@@ -1,5 +1,7 @@
 /*jshint esversion: 6*/
 
+
+//constants
 window.onload= function(){
   console.info("Console Working");
   const pi=3.142;
