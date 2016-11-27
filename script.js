@@ -3,6 +3,31 @@
 
 window.onload= function(){
 
+  //arrow functions
+  var Person={
+    name:"Daniel",
+    code(x){
+      window.setInterval(()=>{
+        if(x>0){
+          console.warn(this.name+" coded an app");
+          x--;
+        }
+      }, 20);//binding this lexical, ie to the ninja object
+    }
+  };
+  Person.code(100);
+
+  var greeting = name => {
+    console.log(`${name} says hello`);
+  };
+  greeting("Daniel");
+
+
+
+
+
+
+/*
   //new string methods
   var test="My name is Daniel";
   console.warn(test.includes("Daniel"));
@@ -15,8 +40,7 @@ window.onload= function(){
   console.log(str.endsWith("working ",str.length-5));
   console.log(str.startsWith("more", 8));
   console.log(str.repeat(2));
-
-
+*/
 /*
   //object literal improvements
   var name="Daniel";
