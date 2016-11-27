@@ -3,6 +3,48 @@
 
 window.onload= function(){
 
+
+  //generators
+
+  genWrapper(function* generator(){
+    var tweets=yield $.getJSON("tweets.json");
+    console.warn(tweets);
+    var friends=yield $.getJSON("fb-friends.json");
+    console.warn(friends);
+    var ytVideos=yield $.getJSON("yt-videos.json");
+    console.warn(ytVideos);
+  });
+  function genWrapper(generator){
+    var mygen=generator();//call generator and store it as iterator
+    function handle(yielded){
+      yielded.value.then(function(data){
+        return handle(mygen.next(data));
+      });
+    }//yielded
+    return handle(mygen.next());
+  }//wrapper
+
+
+  //example
+  function* gen(){
+    var x=yield "pear";//yield pauses the function. JS reads from right to left
+    var y=yield "apple";
+    var z=yield "banana";
+    return x+y+z;
+  }
+  var myGen=gen();//declaring an iterator
+  console.log(myGen.next());//play the function
+  console.log(myGen.next(10));//play the function again to start the rest of the function till the next pause. set x to 10
+  console.log(myGen.next(5));//play the function again to start the rest of the function till the next pause
+  console.log(myGen.next(3));//play the function again to start the rest of the function till the next pause
+
+
+
+
+
+
+
+/*
   //Sets
   var people=["daniel", "lukas", "dave", "daniel", "dave", "jenny"];
   var refinedPeople=new Set (people);
@@ -18,7 +60,7 @@ window.onload= function(){
   console.warn(names.has("jenny"));
   console.warn(names.size);
   console.log(names);
-
+*/
 /*
   //arrow functions
   var Person={
