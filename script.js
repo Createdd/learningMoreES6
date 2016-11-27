@@ -3,6 +3,23 @@
 
 window.onload= function(){
 
+  //Sets
+  var people=["daniel", "lukas", "dave", "daniel", "dave", "jenny"];
+  var refinedPeople=new Set (people);
+  console.log(refinedPeople);
+  people=[...refinedPeople];
+  console.error(people);
+
+
+  var names=new Set();
+  names.add("daniel").add("dave").add("jenny").add("daniel");//eliminating duplicates
+  //names.clear();
+  console.log(names.delete("jenny"));
+  console.warn(names.has("jenny"));
+  console.warn(names.size);
+  console.log(names);
+
+/*
   //arrow functions
   var Person={
     name:"Daniel",
@@ -21,12 +38,7 @@ window.onload= function(){
     console.log(`${name} says hello`);
   };
   greeting("Daniel");
-
-
-
-
-
-
+  */
 /*
   //new string methods
   var test="My name is Daniel";
