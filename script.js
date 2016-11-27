@@ -1,5 +1,7 @@
 /*jshint esversion: 6*/
+module.exports= function script(){
 
+  console.error("working"),
 
 window.onload= function(){
 
@@ -174,4 +176,5 @@ window.onload= function(){
   console.log(pi);
   calcArea(5);
 */
+};
 };
